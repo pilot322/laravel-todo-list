@@ -1,24 +1,13 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What</title>
-</head>
-
-<body>
+<x-layout>
     <h1>Items</h1>
 
     <ul>
         @foreach ($items as $item)
-            <li>
-                <a href="/items/{{ $item['id'] }}">
-                    {{ $item['name'] }} : {{ $item['amount'] }}
-                </a>
-            </li>
+        <li>
+            <x-card href="/items/{{$item['id']}}" :highlight="$item['amount'] > 20">
+                <h1 class='font-bold text-blue-100' :highlight="true"> {{$item['name']}} </h3>
+            </x-card>
+        </li>
         @endforeach
     </ul>
-
-</body>
-
-</html>
+</x-layout>
