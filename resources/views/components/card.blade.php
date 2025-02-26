@@ -1,5 +1,5 @@
 @props(['highlight' => false])
-<div @class(['bg-stone-500' => !$highlight, 'bg-red-500' => $highlight, 'w-1/2 m-2'])>
+<div @class(['bg-stone-500' => !$highlight, 'bg-red-500' => $highlight])>
     {{ $slot }}
     <a {{ $attributes }} class="btn">View Details</a>
 </div>
